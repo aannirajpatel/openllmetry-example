@@ -2,8 +2,10 @@ import uvicorn
 from fastapi import FastAPI
 from dotenv import load_dotenv
 from agent import agent_executor
+from otel import setup_openllmetry
 
 load_dotenv()
+setup_openllmetry()
 app = FastAPI()
 
 @app.get("/")
