@@ -40,3 +40,14 @@ OPENAI_API_KEY="" # get your OpenAI API key from https://platform.openai.com/acc
 
 ## 3. Instrument the LLM Application
 
+As part of API setup, simply make a method call, and Traceloop SDK will handle the rest!
+
+```python
+import os
+from traceloop.sdk import TraceLoop
+Traceloop.init("arithmetic_service",api_endpoint=os.getenv("OTLP_ENDPOINT"), headers={"Authorization": os.getenv("OTLP_AUTHORIZATION_HEADER")})
+```
+
+Now, you can run the app, try out the endpoint, and see the traces and metrics in Grafana Cloud!
+
+![Grafana cloud traces](step-3-grafana-traces.png)
