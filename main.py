@@ -1,13 +1,10 @@
-import uvicorn
 from fastapi import FastAPI
 from dotenv import load_dotenv
 from agent import agent_executor
 from otel import setup_openllmetry
 
 load_dotenv()
-setup_openllmetry()
 app = FastAPI()
-
 
 @app.get("/")
 async def hello_world():
@@ -20,7 +17,4 @@ def calculate(
     "multiplied by 11",
 ):
     return {"result": agent_executor.invoke({"input": prompt})}
-
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8080)
+setup_openllmetry(app)

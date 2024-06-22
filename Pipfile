@@ -11,6 +11,7 @@ traceloop-sdk = "*"
 notebook = "*"
 python-dotenv = "*"
 opentelemetry-instrumentation-openai = "*"
+opentelemetry-instrumentation-fastapi = "*"
 
 [dev-packages]
 
