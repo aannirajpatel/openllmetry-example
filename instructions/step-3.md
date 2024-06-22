@@ -45,7 +45,9 @@ As part of API setup, simply make a method call, and Traceloop SDK will handle t
 ```python
 import os
 from traceloop.sdk import TraceLoop
+from opentelemetry.instrumentation.openai import OpenAIInstrumentor
 Traceloop.init("arithmetic_service",api_endpoint=os.getenv("OTLP_ENDPOINT"), headers={"Authorization": os.getenv("OTLP_AUTHORIZATION_HEADER")})
+OpenAIInstrumentor().instrument()
 ```
 
 Now, you can run the app, try out the endpoint, and see the traces and metrics in Grafana Cloud!
