@@ -40,13 +40,15 @@ OPENAI_API_KEY="" # get your OpenAI API key from https://platform.openai.com/acc
 
 ## 3. Instrument the LLM Application
 
-As part of API setup, simply make a method call, and Traceloop SDK will handle the rest!
+As part of the instrumentation setup, simply make a method call, and Traceloop SDK will handle the rest!
 
 ```python
 import os
 from traceloop.sdk import TraceLoop
 from opentelemetry.instrumentation.openai import OpenAIInstrumentor
+# ... initialize the FastAPI app
 Traceloop.init("arithmetic_service",api_endpoint=os.getenv("OTLP_ENDPOINT"), headers={"Authorization": os.getenv("OTLP_AUTHORIZATION_HEADER")})
+FastAPIInstrumentor.instrument_app(app=app)
 OpenAIInstrumentor().instrument()
 ```
 
