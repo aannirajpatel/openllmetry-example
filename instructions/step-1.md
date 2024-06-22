@@ -15,7 +15,7 @@ pip install pipenv
 # Initialize a new Pipenv project
 pipenv install
 # Install the required packages
-pipenv install langchain langchain-openai fastapi traceloop-sdk
+pipenv install langchain langchain-openai fastapi traceloop-sdk opentelemetry-instrumentation-openai
 ```
 
 Next, create a new file named `main.py` in the project directory and add the following code to it:

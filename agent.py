@@ -22,7 +22,7 @@ def add_numbers(a: int, b: int) -> int:
 
 @tool
 def subtract_numbers(a: int, b: int) -> int:
-    """Subtracts the second number `b` from the first number `a` and returns the difference."""
+    """Subtracts the second number `b` from the first number `a` and returns the difference. In mathematical terms, this is `a - b`."""
     return a - b
 
 
